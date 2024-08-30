@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    /*ayuda a colocar las cajas como si fueran celdas de tabla*/
+    justify-content: center;
+    /*controla la alineacion de todos los elementos en el eje principal*/
+    align-items: center;
+    /*controla la alineacion de los elementos*/
+    min-height: 100vh;
+    /* se utiliza para defiir la altura minima de un elemento*/
+        background-image:url(img0.png);
+    background-size: cover;
+
+}
+.box {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation:animate 20s linear infinite;
+}
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(600deg);
+    }
+}
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(400PX);
+    -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,black);
+}
+.box span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
